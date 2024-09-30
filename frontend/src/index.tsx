@@ -5,6 +5,7 @@ import './polyfills'
 
 import * as React from 'react'
 import ReactDOM from 'react-dom'
+import { ColorModeScript } from '@chakra-ui/react'
 
 import { App } from './app/App'
 import * as dayjs from './utils/dayjs'
@@ -35,6 +36,7 @@ dayjs.init()
 
 ReactDOM.render(
   <React.StrictMode>
+    <ColorModeScript initialColorMode={'dark'} />
     <App />
   </React.StrictMode>,
   document.getElementById('root'),

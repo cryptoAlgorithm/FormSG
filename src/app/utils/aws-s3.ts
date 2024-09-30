@@ -31,7 +31,8 @@ export const createPresignedPostDataPromise = (
 ) => {
   return ResultAsync.fromPromise(
     new Promise<PresignedPost>((resolve, reject) => {
-      AwsConfig.s3.createPresignedPost(
+      AwsConfig.s3.getSignedUrl(
+        'putObject',
         {
           Bucket: params.bucketName,
           Expires: params.expiresSeconds,
@@ -54,7 +55,10 @@ export const createPresignedPostDataPromise = (
           if (err) {
             return reject(err)
           }
-          return resolve(data)
+          return resolve({
+            url: data,
+            fields: { Policy: '', 'X-Amz-Signature': '' },
+          })
         },
       )
     }),

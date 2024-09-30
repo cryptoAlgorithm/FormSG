@@ -35,8 +35,6 @@ import { useEditFieldForm } from '../common/useEditFieldForm'
 
 import { AttachmentStackedBar } from './AttachmentStackedBar'
 
-type EditAttachmentProps = EditFieldProps<AttachmentFieldBase>
-
 const EDIT_ATTACHMENT_FIELD_KEYS = [
   'title',
   'description',

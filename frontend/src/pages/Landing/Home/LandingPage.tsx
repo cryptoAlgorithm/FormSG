@@ -14,6 +14,7 @@ import {
   TabPanels,
   Tabs,
   Text,
+  useColorMode,
   VisuallyHidden,
   Wrap,
 } from '@chakra-ui/react'
@@ -91,6 +92,7 @@ export const LandingPage = (): JSX.Element => {
       listItem: { marginBottom: '1rem' },
     },
   })
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <>
