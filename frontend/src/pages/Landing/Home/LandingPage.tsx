@@ -57,6 +57,8 @@ import { SectionBodyText } from '../components/SectionBodyText'
 import { SectionTitleText } from '../components/SectionTitleText'
 import { StatsItem } from '../components/StatsItem'
 
+import Link from '~components/Link'
+
 import formsHeroAnimation from './assets/images/animation-hero.json'
 import howFormsWorksAnimation from './assets/images/animation-mode.json'
 import enterEmailAnimation from './assets/images/animation-typing.json'
