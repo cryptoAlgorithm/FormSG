@@ -5,8 +5,8 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
-import { datadogLogs } from '@datadog/browser-logs'
 
+//import { datadogLogs } from '@datadog/browser-logs'
 import { theme } from '~theme/index'
 import { AuthProvider } from '~contexts/AuthContext'
 import { GrowthBookProvider } from '~contexts/GrowthbookContext'
@@ -32,7 +32,7 @@ const queryClient = new QueryClient({
 })
 
 // Init Datadog browser logs
-datadogLogs.init({
+/*datadogLogs.init({
   clientToken: process.env.REACT_APP_DD_RUM_CLIENT_TOKEN || '',
   env: process.env.REACT_APP_DD_RUM_ENV,
   site: 'datadoghq.com',
@@ -41,7 +41,7 @@ datadogLogs.init({
   version: process.env.REACT_APP_VERSION,
   forwardErrorsToLogs: true,
   sampleRate: 100,
-})
+})*/
 
 export const App = (): JSX.Element => {
   const isDev = process.env.NODE_ENV === 'development'
@@ -71,9 +71,7 @@ export const App = (): JSX.Element => {
           <BrowserRouter>
             <ChakraProvider theme={theme} resetCSS>
               <AuthProvider>
-                <GrowthBookProvider>
-                  <AppRouter />
-                </GrowthBookProvider>
+                <AppRouter />
               </AuthProvider>
             </ChakraProvider>
           </BrowserRouter>

@@ -8,8 +8,8 @@ import { PublicHeader } from '~templates/PublicHeader'
 
 const PUBLIC_HEADER_LINKS = [
   {
-    label: 'Help',
-    href: FORM_GUIDE,
+    label: 'Sign Up',
+    href: 'https://go.blahaj.sg/signup',
     showOnMobile: true,
     MobileIcon: BxsHelpCircle,
   },

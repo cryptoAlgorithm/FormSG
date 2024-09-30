@@ -12,7 +12,7 @@ export const DEFAULT_FOOTER_ICON_LINK: FooterLinkWithIcon = {
 }
 
 export const DEFAULT_SOCIAL_MEDIA_LINKS: FooterLinkWithIcon[] = [
-  {
+  /*{
     href: 'https://sg.linkedin.com/company/open-government-products',
     Icon: BxlLinkedin,
     label: 'Go to our LinkedIn page',
@@ -21,9 +21,9 @@ export const DEFAULT_SOCIAL_MEDIA_LINKS: FooterLinkWithIcon[] = [
     href: 'https://www.facebook.com/opengovsg',
     Icon: BxlFacebook,
     label: 'Go to our Facebook page',
-  },
+  },*/
   {
-    href: 'https://www.instagram.com/opengovsg',
+    href: 'https://www.instagram.com/blahajctf',
     Icon: BxlInstagram,
     label: 'Go to our Instagram page',
   },

@@ -14,10 +14,10 @@ import {
 
 import { BxsBank } from '~assets/icons/BxsBank'
 import { BxsLockAlt } from '~assets/icons/BxsLockAlt'
+import { BlahajMini } from '~assets/svgrs/brand/BlahajMini'
 import { useIsMobile } from '~hooks/useIsMobile'
 import Link from '~components/Link'
 
-import { GovtMastheadIcon } from './GovtMastheadIcon'
 import { GovtMastheadItem } from './GovtMastheadItem'
 
 export interface GovtMastheadProps {
@@ -136,14 +136,14 @@ export const GovtMasthead = ({
         isOpen={isOpen}
         ariaControlId={ariaControlId}
       >
-        <GovtMastheadIcon
+        <BlahajMini
           aria-hidden
           fontSize="1rem"
           mr={{ base: '0.25rem', lg: '0.5rem' }}
           my={{ base: '0px', md: '2px' }}
         />
         <Flex alignItems="center" flexWrap="wrap">
-          <Text my="2px">A Team Blahal Website&ensp;</Text>
+          <Text my="2px">A Team Blahaj Website&ensp;</Text>
           <HowToIdentify
             isOpen={isOpen}
             onToggle={onToggle}

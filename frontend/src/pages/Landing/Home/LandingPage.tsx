@@ -1,5 +1,4 @@
 import { BiLockAlt, BiMailSend, BiRightArrowAlt } from 'react-icons/bi'
-import { Link as ReactLink } from 'react-router-dom'
 import {
   Accordion,
   Box,
@@ -26,6 +25,7 @@ import FormBrandLogo from '~/assets/svgs/brand/brand-mark-colour.svg'
 
 import { BxlGithub } from '~assets/icons/BxlGithub'
 import { BxsHelpCircle } from '~assets/icons/BxsHelpCircle'
+import { BlahajMini } from '~assets/svgrs/brand/BlahajMini'
 import {
   CONTACT_US,
   FORM_GUIDE,
@@ -117,16 +117,16 @@ export const LandingPage = (): JSX.Element => {
               textStyle={{ base: 'display-1-mobile', md: 'display-1' }}
               color="secondary.700"
             >
-              Shoo, you&apos;re not supposed to be here.
+              FormSG for Blahaj.
             </Text>
             <SectionBodyText>
-              Sign up for <Link href={'https://blahaj.sg'}>BlahajCTF</Link>!.
+              Go check out [BlahajCTF](https://blahaj.sg)!
             </SectionBodyText>
             <Box mt="2.5rem">
               <Button
                 isFullWidth={isMobile}
-                as={ReactLink}
-                to={'https://go.blahaj.sg/signup'}
+                as={'a'}
+                href={'https://go.blahaj.sg/signup'}
                 rightIcon={<BiRightArrowAlt fontSize="1.5rem" />}
               >
                 Sign Up
@@ -196,9 +196,7 @@ export const LandingPage = (): JSX.Element => {
               approvals.
             </SectionBodyText>
             <Box mt="2.5rem">
-              <Button as={ReactLink} to={LOGIN_ROUTE}>
-                Get started
-              </Button>
+              <Button disabled>No getting started</Button>
             </Box>
           </Flex>
           <Box flex={1} aria-hidden>
@@ -210,7 +208,9 @@ export const LandingPage = (): JSX.Element => {
         </Stack>
       </LandingSection>
       <LandingSection>
-        <SectionTitleText>Used by most government agencies</SectionTitleText>
+        <SectionTitleText>
+          Not used by most government agencies
+        </SectionTitleText>
         <Wrap shouldWrapChildren spacingX="3rem" mt="2.5rem" spacingY="2.5rem">
           <StatsItem stat={data?.formCount} description="forms launched" />
           <StatsItem
@@ -230,12 +230,14 @@ export const LandingPage = (): JSX.Element => {
         <Wrap
           shouldWrapChildren
           mt="4rem"
-          spacing={{ base: '2.5rem', md: '4.5rem' }}
+          spacing={{ base: '1rem', md: '2rem' }}
+          fontSize={'92px'}
         >
-          <Image
+          {/*<Image
             alt="Immigration and Checkpoints Authority"
             src={restrictedIcaLogo}
           />
+
           <Image alt="Ministry of Education" src={restrictedMoeLogo} />
           <Image alt="Ministry of Manpower" src={restrictedMomLogo} />
           <Image alt="National Parks Board" src={restrictedNparksLogo} />
@@ -245,7 +247,15 @@ export const LandingPage = (): JSX.Element => {
           <Image
             alt="Ministry of Social and Family Development"
             src={restrictedMsfLogo}
-          />
+          />*/}
+          <BlahajMini />
+          <BlahajMini />
+          <BlahajMini />
+          <BlahajMini />
+          <BlahajMini />
+          <BlahajMini />
+          <BlahajMini />
+          <BlahajMini />
         </Wrap>
       </LandingSection>
       <LandingSection bg="primary.100" align="center">
@@ -526,8 +536,8 @@ export const LandingPage = (): JSX.Element => {
           Start building your form now.
         </Text>
         <Box mt="2rem">
-          <Button as={ReactLink} to={LOGIN_ROUTE}>
-            Get started
+          <Button as={'a'} href={'https://blahaj.sg'}>
+            Learn More
           </Button>
         </Box>
       </LandingSection>

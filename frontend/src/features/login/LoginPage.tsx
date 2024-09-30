@@ -95,12 +95,12 @@ export const LoginPage = (): JSX.Element => {
         <Stack spacing="2rem">
           <LoginForm onSubmit={handleSendOtp} />
           {/* Only show sgID login button if user is not on intranet */}
-          {!isIntranetIp && (
+          {/*!isIntranetIp && (
             <>
               <OrDivider />
               <SgidLoginButton />
             </>
-          )}
+          )*/}
         </Stack>
       ) : (
         <OtpForm
