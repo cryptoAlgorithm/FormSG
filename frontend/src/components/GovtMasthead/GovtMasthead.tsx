@@ -143,7 +143,7 @@ export const GovtMasthead = ({
           my={{ base: '0px', md: '2px' }}
         />
         <Flex alignItems="center" flexWrap="wrap">
-          <Text my="2px">A Singapore Government Agency Website&ensp;</Text>
+          <Text my="2px">A Team Blahal Website&ensp;</Text>
           <HowToIdentify
             isOpen={isOpen}
             onToggle={onToggle}
@@ -171,20 +171,13 @@ export const GovtMasthead = ({
         >
           <GovtMastheadItem
             icon={BxsBank}
-            header="Official website links end with .gov.sg"
+            header="Official website links end with .blahaj.sg"
           >
             <Box textStyle={{ base: 'caption-2', md: 'body-1' }}>
               <Text as="span">
-                Government agencies communicate via <b>.gov.sg</b> websites
-                (e.g. go.gov.sg/open).{' '}
+                Team Blahaj communicate via <b>.blahaj.sg</b> websites (e.g.
+                go.blahaj.sg/signup).{' '}
               </Text>
-              <Link
-                aria-label="Click to open a list of trusted sites in a new window"
-                href="https://go.gov.sg/trusted-sites"
-                isExternal
-              >
-                Trusted websites
-              </Link>
             </Box>
           </GovtMastheadItem>
           <GovtMastheadItem

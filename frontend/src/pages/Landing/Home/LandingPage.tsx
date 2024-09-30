@@ -116,20 +116,19 @@ export const LandingPage = (): JSX.Element => {
               textStyle={{ base: 'display-1-mobile', md: 'display-1' }}
               color="secondary.700"
             >
-              Build secure government forms in minutes.
+              Shoo, you&apos;re not supposed to be here.
             </Text>
             <SectionBodyText>
-              Instant, customisable forms with zero code or cost, to safely
-              collect classified and sensitive data.
+              Sign up for <Link href={'https://blahaj.sg'}>BlahajCTF</Link>!.
             </SectionBodyText>
             <Box mt="2.5rem">
               <Button
                 isFullWidth={isMobile}
                 as={ReactLink}
-                to={LOGIN_ROUTE}
+                to={'https://go.blahaj.sg/signup'}
                 rightIcon={<BiRightArrowAlt fontSize="1.5rem" />}
               >
-                Start building your form now
+                Sign Up
               </Button>
             </Box>
           </Flex>
@@ -156,7 +155,7 @@ export const LandingPage = (): JSX.Element => {
           <FeatureGridItem
             image={featureIntegrationsImg}
             title="Singpass and Myinfo"
-            description="Authenticate individuals or businesses with Singpass, and speed up form filling with pre-filled data from Myinfo"
+            description="Actually, no you"
           />
           <FeatureGridItem
             image={featureLogicImg}

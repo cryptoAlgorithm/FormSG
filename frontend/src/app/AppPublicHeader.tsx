@@ -25,9 +25,10 @@ export const AppPublicHeader = ({ bg }: { bg?: string }): JSX.Element => {
           basecolorintensity={500}
           colorScheme="primary"
           as={Link}
-          to={LOGIN_ROUTE}
+          disabled
+          to={'/'}
         >
-          Log in
+          Go Away
         </Button>
       }
       bg={bg}
