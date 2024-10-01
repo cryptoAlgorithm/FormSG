@@ -281,7 +281,7 @@ export const optionalVarsSchema: Schema<IOptionalVarsSchema> = {
   awsConfig: {
     region: {
       doc: 'Region that S3 bucket is located in',
-      format: Object.keys(awsInfo.data.regions),
+      format: ['auto', 'apac', ...Object.keys(awsInfo.data.regions)], // add in regions valid for R2
       default: 'ap-southeast-1',
       env: 'AWS_REGION',
     },

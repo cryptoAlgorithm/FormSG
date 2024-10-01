@@ -29,6 +29,7 @@ type CreatePresignedPostDataParams = {
 export const createPresignedPostDataPromise = (
   params: CreatePresignedPostDataParams,
 ) => {
+  const key = params.key ?? crypto.randomUUID()
   return ResultAsync.fromPromise(
     new Promise<PresignedPost>((resolve, reject) => {
       AwsConfig.s3.getSignedUrl(
@@ -40,7 +41,7 @@ export const createPresignedPostDataPromise = (
             // Content length restrictions: 0 to MAX_UPLOAD_FILE_SIZE.
             ['content-length-range', 0, params.size],
           ],*/
-          Key: params.key ?? crypto.randomUUID(),
+          Key: key,
           /*...(params.fileMd5Hash
             ? { 'Content-MD5': params.fileMd5Hash }
             : undefined),
@@ -55,7 +56,7 @@ export const createPresignedPostDataPromise = (
           }
           return resolve({
             url: data,
-            fields: { Policy: '', 'X-Amz-Signature': '' },
+            fields: { Policy: '', 'X-Amz-Signature': '', key },
           })
         },
       )

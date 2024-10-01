@@ -76,16 +76,12 @@ const generatePresignedData = async (
 
 const putToPresignedUrl = async (
   presignedUrl: string,
-  formData: FormData,
+  formData: File,
 ): Promise<AxiosResponse<never>> => {
-  return ApiService.put(
-    presignedUrl,
-    {},
-    {
-      headers: { 'Content-Type': '' },
-      withCredentials: false,
-    },
-  )
+  return ApiService.put(presignedUrl, formData, {
+    headers: { 'Content-Type': '' },
+    withCredentials: false,
+  })
 }
 
 /**
@@ -114,13 +110,13 @@ const uploadFile = async ({
   const postData = await generatePresignedData(url, presignedDataParams)
 
   // Generate formdata to post to the presigned url.
-  const formData = new FormData()
+  /*const formData = new FormData()
   Object.entries(postData.fields).forEach(([k, v]) => formData.append(k, v))
-  formData.append('file', file)
+  formData.append('file', file)*/
 
   // POST generated formData to presigned url
   console.log('Uploading to', postData.url)
-  const response = await putToPresignedUrl(postData.url, formData)
+  const response = await putToPresignedUrl(postData.url, file)
 
   const encodedFileId = encodeURIComponent(postData.fields.key)
 
