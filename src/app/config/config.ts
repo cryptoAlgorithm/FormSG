@@ -91,6 +91,7 @@ const s3 = new aws.S3({
   // for localstack to work, or for Cloudflare R2.
   endpoint: isDevOrTest || hasR2Buckets ? s3BucketUrlVars.endPoint : undefined,
   s3ForcePathStyle: isDevOrTest || hasR2Buckets ? true : undefined,
+  signatureVersion: 'v4',
 })
 
 // using aws-sdk v3 (FRM-993)

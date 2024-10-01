@@ -36,20 +36,18 @@ export const createPresignedPostDataPromise = (
         {
           Bucket: params.bucketName,
           Expires: params.expiresSeconds,
-          Conditions: [
+          /*Conditions: [
             // Content length restrictions: 0 to MAX_UPLOAD_FILE_SIZE.
             ['content-length-range', 0, params.size],
-          ],
-          Fields: {
-            key: params.key ?? crypto.randomUUID(),
-            ...(params.acl ? { acl: params.acl } : undefined),
-            ...(params.fileMd5Hash
-              ? { 'Content-MD5': params.fileMd5Hash }
-              : undefined),
-            ...(params.fileType
-              ? { 'Content-Type': params.fileType }
-              : undefined),
-          },
+          ],*/
+          Key: params.key ?? crypto.randomUUID(),
+          /*...(params.fileMd5Hash
+            ? { 'Content-MD5': params.fileMd5Hash }
+            : undefined),
+          ...(params.fileType
+            ? { 'Content-Type': params.fileType }
+            : undefined),
+          ...(params.acl ? { 'x-amz-acl': params.acl } : undefined),*/
         },
         (err, data) => {
           if (err) {

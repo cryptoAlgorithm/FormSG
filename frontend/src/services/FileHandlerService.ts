@@ -78,10 +78,14 @@ const putToPresignedUrl = async (
   presignedUrl: string,
   formData: FormData,
 ): Promise<AxiosResponse<never>> => {
-  return ApiService.put(presignedUrl, {
-    headers: { 'Content-Type': '' },
-    withCredentials: false,
-  })
+  return ApiService.put(
+    presignedUrl,
+    {},
+    {
+      headers: { 'Content-Type': '' },
+      withCredentials: false,
+    },
+  )
 }
 
 /**
